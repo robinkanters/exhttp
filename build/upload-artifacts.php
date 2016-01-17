@@ -46,7 +46,7 @@ function webdav_upload_file($fileName, $uploadUri, $credentials)
     fclose($fh);
 }
 
-$subdirName = $buildNumber . '_' . $gitBranchName . ' ' . $gitCommitId;
+$subdirName = $buildNumber . '_' . $gitBranchName . '_' . $gitCommitId;
 $uploadBaseUri = 'https://robinkanters.stackstorage.com/remote.php/webdav/Travis%20Build%20Artifacts/RobinKanters/EzHttp/';
 $uploadUri = $uploadBaseUri . $subdirName . '/';
 
