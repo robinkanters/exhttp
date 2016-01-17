@@ -14,4 +14,4 @@ script:
   - php ./vendor/bin/phpunit -c tests/phpunit.xml tests/
   - php ./vendor/bin/phpmetrics src/ --report-html=build/phpmetrics.html
 after_success:
-  - php ./build/upload-artifacts.php $WEBDAV_CREDENTIALS $TRAVIS_BUILD_NUMBER $TRAVIS_COMMIT
+  - php ./build/upload-artifacts.php $WEBDAV_CREDENTIALS $TRAVIS_BUILD_NUMBER $TRAVIS_COMMIT $TRAVIS_PULL_REQUEST $TRAVIS_BRANCH

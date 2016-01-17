@@ -2,10 +2,12 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-if($argc < 4) die('Not enough parameters');
+if($argc < 6) die('Not enough parameters');
 $credentials = $argv[1];
 $buildNumber = $argv[2];
 $gitCommitId = $argv[3];
+$gitPullRequest = $argv[4];
+$gitBranchName = ($gitPullRequest == 'false') ? $argv[5] : 'PR'.$gitPullRequest;
 
 function build_curl($url, $httpMethod, $credentials)
 {
@@ -38,7 +40,7 @@ function webdav_upload_file($fileName, $uploadUri, $credentials)
     fclose($fh);
 }
 
-$subdirName = $buildNumber . '_' . $gitCommitId . '_' . date('Ymd-His');
+$subdirName = $buildNumber . '_' . $gitBranchName . ' ' . $gitCommitId;
 $uploadBaseUri = 'https://robinkanters.stackstorage.com/remote.php/webdav/Travis%20Build%20Artifacts/RobinKanters/EzHttp/';
 $uploadUri = $uploadBaseUri . $subdirName . '/';
 
