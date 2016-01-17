@@ -6,6 +6,8 @@ php:
   - '7.0'
   - hhvm
   - nightly
+before_install:
+  - composer selfupdate
 install:
   - composer update
 script:
