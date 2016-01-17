@@ -1,0 +1,28 @@
+{
+  "name": "robinkanters/ezhttp",
+  "description": "An OOP library for HTTP communication.",
+  "type": "library",
+  "license": "GPL-2.0",
+  "authors": [
+    {
+      "name": "Robin Kanters",
+      "email": "robin@robinkanters.nl"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "^4.8",
+    "halleck45/phpmetrics": "^1.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "RK\\ExHttp\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "RK\\ExHttpTest\\": "tests/"
+    }
+  }
+}
