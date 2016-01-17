@@ -12,8 +12,6 @@ function build_curl($url, $httpMethod, $credentials)
     curl_setopt($ch, CURLOPT_USERPWD, $credentials);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $httpMethod);
 
-    curl_setopt($ch, CURLOPT_VERBOSE, true);
-
     return $ch;
 }
 
