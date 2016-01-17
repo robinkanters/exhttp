@@ -21,6 +21,9 @@ function build_curl($url, $httpMethod, $credentials)
 
 function webdav_mkdir($uri, $credentials)
 {
+    printf('Making dir %s', $uri);
+    echo PHP_EOL;
+
     $makeDirReq = build_curl($uri, 'MKCOL', $credentials);
     curl_exec($makeDirReq);
     curl_close($makeDirReq);
@@ -28,6 +31,9 @@ function webdav_mkdir($uri, $credentials)
 
 function webdav_upload_file($fileName, $uploadUri, $credentials)
 {
+    printf('Uploading %s to %s', $fileName, $uploadUri);
+    echo PHP_EOL;
+
     $fileSize = filesize($fileName);
 
     $fh = fopen($fileName, 'r');
