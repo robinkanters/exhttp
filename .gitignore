@@ -3,4 +3,6 @@
 !/.gitignore
 !.gitkeep
 
+/composer.lock
+
 /vendor/
